@@ -1,0 +1,130 @@
+{
+	"info": {
+		"_postman_id": "01868243-19c7-4bfa-81cc-c8570b4b403c",
+		"name": "JWT Security",
+		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Login",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"username\" : \"tanmoy\",\n    \"password\" : 1234\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "http://localhost:8080/authenticate"
+			},
+			"response": []
+		},
+		{
+			"name": "Get user list",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": {
+						"token": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJ0YW5tb3kiLCJleHAiOjE2NDY1MDQzNTQsImlhdCI6MTY0NjUwMDc1NH0.LcogvWe0UyITBwKX6tbr30DdbdsIbh5WE23ShlHSV3hgXNsnZzEzKu1zXvkWsB8Q1PDXZS6yV9dcPCEH0dMl9w"
+					}
+				},
+				"method": "GET",
+				"header": [],
+				"url": "http://localhost:8080/user/list"
+			},
+			"response": []
+		},
+		{
+			"name": "Active user",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": {
+						"token": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJ0YW5tb3kiLCJleHAiOjE2NDY1MDQ2NDksImlhdCI6MTY0NjUwMTA0OX0.ZB57fl9q0uchbqcLU0bjheHgoX8SKQhVy3PjRefTAe3TsYGpfVl83D2z6fz0ZpK2-ZRnNd92zvJz9dcfmQ06Pg"
+					}
+				},
+				"method": "POST",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/user/active?userId=2",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"user",
+						"active"
+					],
+					"query": [
+						{
+							"key": "userId",
+							"value": "2"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Deactivate user",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": {
+						"token": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJ0YW5tb3kiLCJleHAiOjE2NDY1MDQ2NDksImlhdCI6MTY0NjUwMTA0OX0.ZB57fl9q0uchbqcLU0bjheHgoX8SKQhVy3PjRefTAe3TsYGpfVl83D2z6fz0ZpK2-ZRnNd92zvJz9dcfmQ06Pg"
+					}
+				},
+				"method": "POST",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/user/deactivate?userId=3",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"user",
+						"deactivate"
+					],
+					"query": [
+						{
+							"key": "userId",
+							"value": "3"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "User registration",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": {
+						"token": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJ0YW5tb3kiLCJleHAiOjE2NDY1MDQ2NDksImlhdCI6MTY0NjUwMTA0OX0.ZB57fl9q0uchbqcLU0bjheHgoX8SKQhVy3PjRefTAe3TsYGpfVl83D2z6fz0ZpK2-ZRnNd92zvJz9dcfmQ06Pg"
+					}
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"username\" : \"abcd\",\n    \"password\" : \"0000\",\n    \"roleId\": 2\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "http://localhost:8080/user/registration"
+			},
+			"response": []
+		}
+	]
+}
