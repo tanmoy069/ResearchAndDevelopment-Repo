@@ -1,0 +1,10 @@
+syntax = "proto3";
+
+import "ApiResponse.proto";
+import "FindRequest.proto";
+
+option java_package="org.olmis.pypepro.proto.module.proto";
+
+service find{
+	rpc findContact(FindRequest) returns (ApiResponse);
+}

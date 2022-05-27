@@ -1,0 +1,7 @@
+syntax = "proto3";
+
+option java_package="org.olmis.pypepro.proto.module.proto";
+
+message FindRequest {
+	int32 id = 1;
+}
