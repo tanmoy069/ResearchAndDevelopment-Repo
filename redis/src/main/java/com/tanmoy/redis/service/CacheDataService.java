@@ -8,6 +8,8 @@ public interface CacheDataService {
 
     void save(CacheData cacheData);
 
+    void saveBulk(Map<Long, CacheData> bulkData);
+
     void update(CacheData cacheData);
 
     void delete(Long id);

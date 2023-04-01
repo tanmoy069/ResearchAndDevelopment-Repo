@@ -22,6 +22,11 @@ public class CacheDataServiceImpl implements CacheDataService {
     }
 
     @Override
+    public void saveBulk(Map<Long, CacheData> bulkData) {
+        hashOperations.putAll(hashReference, bulkData);
+    }
+
+    @Override
     public void update(CacheData cacheData) {
         hashOperations.put(hashReference, cacheData.getId(), cacheData);
     }
