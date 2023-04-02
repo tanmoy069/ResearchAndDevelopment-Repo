@@ -40,4 +40,27 @@ class CacheDataServiceTests {
         System.out.println(cacheDataService.findById(1L));
     }
 
+    @Test
+    void findByIdTest() {
+        System.out.println(cacheDataService.findById(1L));
+    }
+
+    @Test
+    void findAllTest() {
+        Map<Long, CacheData> bulkDataFromCache = cacheDataService.getAll();
+        for (CacheData cacheData : bulkDataFromCache.values()) {
+            System.out.println(cacheData);
+        }
+    }
+
+    @Test
+    void deleteTest() {
+        cacheDataService.delete(1L);
+        CacheData cacheData = cacheDataService.findById(1L);
+        if(cacheData == null) System.out.println("Successfully deleted");
+        else System.out.println("Unable to delete data");
+    }
+
+
+
 }
