@@ -57,10 +57,8 @@ class CacheDataServiceTests {
     void deleteTest() {
         cacheDataService.delete(1L);
         CacheData cacheData = cacheDataService.findById(1L);
-        if(cacheData == null) System.out.println("Successfully deleted");
+        if (cacheData == null) System.out.println("Successfully deleted");
         else System.out.println("Unable to delete data");
     }
-
-
 
 }
