@@ -12,8 +12,13 @@ import java.util.Map;
 @SpringBootTest
 class CacheDataServiceTests {
 
+
+    private final CacheDataService cacheDataService;
+
     @Autowired
-    private CacheDataService cacheDataService;
+    CacheDataServiceTests(CacheDataService cacheDataService) {
+        this.cacheDataService = cacheDataService;
+    }
 
     @Test
     void saveCacheDataTest() {
