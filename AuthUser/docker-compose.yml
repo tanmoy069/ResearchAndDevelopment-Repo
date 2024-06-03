@@ -1,0 +1,23 @@
+version: '3'
+
+services:
+
+  service:
+    container_name: auth_service
+    image: auth_service
+    build:
+      context: .
+      dockerfile: Dockerfile
+    restart: always
+    volumes:
+      - ./.:/home/auth_service
+    ports:
+      - "8080:8080"
+    tty: true
+    networks:
+      - server
+
+networks:
+  server:
+    driver: bridge
+
