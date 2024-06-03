@@ -17,7 +17,7 @@ public class User implements Serializable {
     @Serial
     private static final long serialVersionUID = 1L;
 
-    public static final String COLLECTION_NAME = "user";
+    public static final String COLLECTION_NAME = "users_info";
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -35,6 +35,13 @@ public class User implements Serializable {
     @Column(name = "password", nullable = false)
     private String password;
 
+    @Column(name = "designation")
+    private String designation;
+
+    @Column(name = "deptmstcode")
+    private String deptmstcode;
+
+    @Column(name = "email")
     private String email;
 
     private boolean enabled;

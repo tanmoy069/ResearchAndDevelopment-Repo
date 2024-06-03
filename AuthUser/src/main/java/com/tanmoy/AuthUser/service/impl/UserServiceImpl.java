@@ -36,6 +36,8 @@ public class UserServiceImpl implements UserService {
         user.setFirstName(request.firstName());
         user.setLastName(request.lastName());
         user.setPassword(passwordEncoder.encode(request.password()));
+        user.setDesignation(request.designation());
+        user.setDeptmstcode(request.deptmstcode());
         user.setEmail(request.email());
         user.setEnabled(request.enabled());
         user.setUserRole(request.userRole());
@@ -54,6 +56,8 @@ public class UserServiceImpl implements UserService {
         user.setFirstName(request.firstName());
         user.setLastName(request.lastName());
         user.setPassword(passwordEncoder.encode(request.password()));
+        user.setDesignation(request.designation());
+        user.setDeptmstcode(request.deptmstcode());
         user.setEmail(request.email());
         user.setEnabled(request.enabled());
         user.setUserRole(request.userRole());

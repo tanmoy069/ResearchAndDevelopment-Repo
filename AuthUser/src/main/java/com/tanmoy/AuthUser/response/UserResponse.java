@@ -14,6 +14,8 @@ public class UserResponse {
     private String firstName;
     private String lastName;
     private String username;
+    private String designation;
+    private String deptmstcode;
     private String email;
     private boolean enabled;
     private boolean tokenExpired;
